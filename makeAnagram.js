@@ -18,8 +18,8 @@ function makeAnagram(a, b) {
   let hasilBanding = []
   let hitung = 0
 
-  console.log(arrayA)
-  console.log(arrayB)
+  // console.log(arrayA)
+  // console.log(arrayB)
   // langkah no 1
   for(let i = 0; i < arrayA.length; i++) {
     banding = arrayB.indexOf(arrayA[i])
@@ -28,10 +28,14 @@ function makeAnagram(a, b) {
     }
   }
 
-  console.log(hasilBanding)
+  // console.log(hasilBanding)
   // langkah no 2 - 6
   for(let j = 0; j < arrayA.length; j++) {
     if ((hasilBanding.indexOf(arrayA[j])) === -1) hitung++
+  }
+
+  for(let k = 0; k < arrayB.length; k++) {
+    if ((hasilBanding.indexOf(arrayB[k])) === -1) hitung++
   }
 
   return hitung
