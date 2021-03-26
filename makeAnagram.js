@@ -12,26 +12,27 @@ function makeAnagram(a, b) {
    * 6. Jumlahkan hasil no 3 & 5
    */
 
-  const arrayA = a.split("")
-  const arrayB = b.split("")
+  const arrayA = a.split("").sort()
+  const arrayB = b.split("").sort()
   let banding
-  let hasilBanding
+  let hasilBanding = []
   let hitung = 0
 
+  console.log(arrayA)
+  console.log(arrayB)
   // langkah no 1
   for(let i = 0; i < arrayA.length; i++) {
     banding = arrayB.indexOf(arrayA[i])
-    if (banding !== -1) hasilBanding = arrayB[banding]
+    if (banding !== -1) {
+      hasilBanding.push(arrayB[banding])
+    }
   }
 
+  console.log(hasilBanding)
   // langkah no 2 - 6
   for(let j = 0; j < arrayA.length; j++) {
-    if (arrayA[j] !== hasilBanding) hitung++
+    if ((hasilBanding.indexOf(arrayA[j])) === -1) hitung++
   }
 
-  for(let k = 0; k < arrayB.length; k++) {
-    if (arrayB[k] !== hasilBanding) hitung++
-  }
-  
   return hitung
 }
