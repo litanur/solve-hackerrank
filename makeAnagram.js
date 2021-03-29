@@ -54,7 +54,11 @@ function makeAnagram(a, b) {
     //console.log(p)
     indices = []
 
-    if (p !== q) hitung++
+    if (p > q) {
+      hitung = hitung + (p - q)
+    } else {
+      hitung = hitung + (q - p)
+    }
   }
 
   //console.log(indices)
